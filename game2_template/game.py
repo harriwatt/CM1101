@@ -251,13 +251,13 @@ def execute_take(item_id):
     """
 	# 1) See what item the player wants to take
 	# 2) see if is in the current room
-	if item_id in room_items:
+    if item_id in rooms[room_items]:
 	# 3) if it is in the current room, move from the current room to players inventory
-		inventory.append(item_id)
-		room_items.remove(item_id)
+        inventory.append(item_id)
+        room_items.remove(item_id)
 	# 4) if its not, tell them they cant take that.
-	else:
-		print("You cannot take that.")
+    else:
+        print("You cannot take that.")
     pass
     
 
@@ -266,11 +266,11 @@ def execute_drop(item_id):
     player's inventory to list of items in the current room. However, if there is
     no such item in the inventory, this function prints "You cannot drop that."
     """
-	if item_id in inventory:
-		room_items.append(item_id)
-		inventory.remove(item_id)
-	else:
-		print("You cannot drop that.") 
+    if item_id in inventory:
+        room_items.append(item_id)
+        inventory.remove(item_id)
+    else:
+        print("You cannot drop that.") 
     pass
     
 
